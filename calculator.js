@@ -19,28 +19,29 @@ function inputNumber(event) {
         return;
     }
     let data = event.target.dataset.input;
-    if (data === ".") {
-        if (data) {
+    if (data) {
+        if (data === ".") {
             if (!displays.textContent.includes(".")) {
                 displays.textContent += data
             }
         }
-    } else {
+     else {
         displays.textContent += data;
         if (!displays.textContent.includes(".")) {
             displays.textContent = Number(displays.textContent);
         }
     }
 }
+}
 
 clearButtons.addEventListener("click", () => {
-    displays.textContent = 0;
+    displays.textContent = "0";
     lastOperation = '';
     memory = 0;
 });
 minusButton.addEventListener("click", () => {
     lastOperation = 'minus';
     memory = Number(displays.textContent);
-    displays.textContent = 0;
+    displays.textContent = "0";
 })
 
